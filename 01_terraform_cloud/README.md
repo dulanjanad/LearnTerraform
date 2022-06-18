@@ -28,5 +28,8 @@ Terraform Cloud
                                                        ---------
                                                            -----
                                                                -
-
 ---------------------------------------------------------------------------------
+
+5. Setup AWS Access and Secret Keys for the Terraform workspace (Set them as environment variables)
+
+6. Now do a terraform apply
