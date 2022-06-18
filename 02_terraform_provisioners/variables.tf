@@ -9,3 +9,7 @@ variable "ami" {
 variable "region" {
   type = string
 }
+
+variable "source_ip" {
+  type = string
+}

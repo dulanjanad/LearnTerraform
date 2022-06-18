@@ -7,8 +7,36 @@ resource "aws_instance" "my_web_server" {
 
     user_data = data.template_file.user_data.rendered
     
+    #local-exec
     provisioner "local-exec" {
       command = "echo ${self.private_ip} >> private_ip.txt"
+    }
+
+    #remote-exec
+    provisioner "remote-exec" {
+      inline = [
+        "echo ${self.private_ip} >> /home/ec2-user/private_ip.txt"
+      ]
+
+      connection {
+        type     = "ssh"
+        user     = "ec2-user"
+        host     = "${self.public_ip}"
+        private_key = "${file("../id_rsa")}"
+      }
+    }
+
+    #file
+    provisioner "file" {
+      content = "Hello.."
+      destination = "/home/ec2-user/hello.txt"
+
+      connection {
+        type     = "ssh"
+        user     = "ec2-user"
+        host     = "${self.public_ip}"
+        private_key = "${file("../id_rsa")}"
+      }
     }
 
     tags = {
