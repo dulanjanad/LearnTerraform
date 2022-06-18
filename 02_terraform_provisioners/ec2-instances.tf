@@ -50,3 +50,16 @@ data "template_file" "user_data" {
     template = file("./userdata.yaml")
 
 }
+
+
+resource "null_resource" "status" {
+
+  provisioner "local-exec" {
+    command = "aws ec2 wait instance-status-ok --instance-ids ${aws_instance.my_web_server.id}"
+  }
+
+  depends_on = [
+    aws_instance.my_web_server
+  ]
+  
+}
