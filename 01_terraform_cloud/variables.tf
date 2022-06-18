@@ -9,3 +9,5 @@ variable "additional_tags" {
 variable "ami" {
   type = string
 }
+
+#terraform_cloud

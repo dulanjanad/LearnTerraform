@@ -22,3 +22,5 @@ terraform {
 locals {
   customer-name = "Symbox"
 }
+
+#terraform_cloud

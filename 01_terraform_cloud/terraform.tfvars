@@ -6,3 +6,5 @@ additional_tags = {
 }
 
 ami = "ami-035c5dc086849b5de"
+
+#terraform_cloud
