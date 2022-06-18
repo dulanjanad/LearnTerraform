@@ -1,15 +1,27 @@
+resource "aws_default_vpc" "default" {
+
+}
+
 resource "aws_security_group" "allow_ssh" {
 
   name        = "allow_ssh"
   description = "Allow SSH inbound traffic"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = aws_default_vpc.default.id
 
   ingress {
-    description      = "SSH from VPC"
+    description      = "SSH from My Public IP"
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
-    cidr_blocks      = ["112.134.147.66/32"]
+    cidr_blocks      = ["0.0.0.0/32"]
+  }
+
+  ingress {
+    description      = "HTTP from My Public IP"
+    from_port        = 80
+    to_port          = 80
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/32"]
   }
 
   egress {
