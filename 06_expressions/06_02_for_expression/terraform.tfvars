@@ -1,3 +1,7 @@
-var_1="World"
+colors=["blue","yellow","red","white","orange"]
 
-var_2 = "Bruno"
+people = {
+    "DJ" = "DE"
+    "GR" = "HOTA"
+    "TONY" = "LDE"
+}

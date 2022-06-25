@@ -2,20 +2,30 @@ terraform {
   
 }
 
-variable "var_1" {
-  type = string
+variable "colors" {
+  type = list
 }
 
-variable "var_2" {
-  type = string
+variable "people" {
+  type = map
 }
 
-#Interpolation
-output "sample_output_1" {
-  value = "Hello ${var.var_1}"
+output "upper_case_out" {
+  value =  [for c in var.colors : upper(c)]
 }
 
-#If Else
-output "sample_output_2" {
-  value = "Bruno %{if var.var_2 == "Bruno"}Mars%{else}World%{endif}"
+output "output_index" {
+  value = [for i,c in var.colors : i]
+}
+
+output "output_map_values" {
+  value = [for k,v in var.people : v]
+}
+
+output "output_list" {
+  value = [{for k,v in var.colors : k => v}]
+}
+
+output "output_map" {
+  value = [{for k,v in var.people : k => v}]
 }
