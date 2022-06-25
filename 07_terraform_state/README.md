@@ -1,22 +1,22 @@
 ### Terraform State
 
-list resources in state
+1). list resources in state
     terrafrom state list
 
-Move an item in the state
+2). Move an item in the state
     terraform state mv
 
-Pull current remote state and output to stdout
+3). Pull current remote state and output to stdout
     terraform state pull
 
-Update remote from a local state
+4). Update remote from a local state
     terraform state push
 
-Replace provider in the state
+5). Replace provider in the state
     terraform state replace-provider
 
-Remove instances from the state
+6). Remove instances from the state
     terraform state rm
 
-Show a resource in the state
+7). Show a resource in the state
     terraform state show
