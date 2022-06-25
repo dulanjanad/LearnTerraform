@@ -1,6 +1,6 @@
 ### Data Sources
 
-#### Resource Meta arguements
+#### Resource Meta arguments
 
 - depends on
 - count
