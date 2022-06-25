@@ -15,6 +15,10 @@ output "output_attrubute" {
   value = [ for i in var.employee_details : i.name ]
 }
 
+output "output_attrubutes" {
+  value = var.employee_details[*].name
+}
+
 output "output_attrubute_first_index" {
   value = var.employee_details[0].name
 }
