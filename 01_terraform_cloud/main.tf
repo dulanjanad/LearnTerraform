@@ -20,7 +20,7 @@ terraform {
 
 
 locals {
-  customer-name = "Symbox"
+  customer-name = "ABC"
 }
 
 #terraform_cloud
