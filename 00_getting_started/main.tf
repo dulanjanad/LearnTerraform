@@ -8,5 +8,5 @@ terraform {
 }
 
 locals {
-  customer-name = "Symbox"
+  customer-name = "ABC"
 }
